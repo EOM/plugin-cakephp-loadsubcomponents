@@ -3,13 +3,19 @@
   "type": "cakephp-plugin",
   "description": "CakePHP 2.x plugin for Load SubComponents.",
   "homepage": "https://github.com/EOM/PluginCakePHPLoadSubComponets",
-  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sergio de EOM",
+      "homepage": "https://eom.com.ar/#PluginCakePHPLoadSubComponets",
+      "role": "Developer"
+    }
+  ],
+  "license": "GNU",
   "require": {
     "php": ">=5.3.0",
     "composer/installers": "*"
   },
   "extra": {
-    "installer-name": "PluginCakePHPLoadSubComponets",
     "installer-paths": {
       "app/Plugin/{$name}/": ["type:cakephp-plugin"]
     }
