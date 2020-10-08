@@ -13,6 +13,7 @@
   "license": "GPL-3.0-only",
   "require": {
     "php": ">=5.3.0",
+    "cakephp/cakephp": "2.10.*",
     "composer/installers": "*"
   },
   "extra": {
