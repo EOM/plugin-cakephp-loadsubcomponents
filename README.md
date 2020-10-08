@@ -5,8 +5,11 @@ Con este componente va a poder crear subdirectorios dentro de tu carpeta Control
 
 Edita tu archivo **composer.json** con los siguientes cambios.
 
-```json
-"extra": {
+```txt
+  "extra": {
+        "installer-name": {
+          "eom/plugincakephploadsubcomponets": "LoadSubComponets"
+        },
         "installer-paths": {
             "app/Plugin/EOM/{$name}/": ["vendor:eom","type:cakephp-plugin"]
         }
@@ -18,7 +21,7 @@ En mi caso, se tomo la siguiente estructura, si tiene otra estructura ajueste el
 
 **Path Tree:**
 
-```json
+```bash
 |-> app 
 | |-> Plugin
 |   |-> ...
@@ -35,8 +38,6 @@ En mi caso, se tomo la siguiente estructura, si tiene otra estructura ajueste el
 Despues agregué al final del archivo o juntos a los otros plugins que tenga configurado, la siguiente linea dentro del archivo **app/Config/bootstrap.php**
 
 ```php
-// Load Plugins
-...
-...
-CakePlugin::load('EOM/PluginCakePHPLoadSubComponets', array('bootstrap' => false, 'routes' => false));
+    // Load Plugins ...
+    CakePlugin::load('EOM/PluginCakePHPLoadSubComponets', array('bootstrap' => false, 'routes' => false));
 ```
