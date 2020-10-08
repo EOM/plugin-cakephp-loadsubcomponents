@@ -1,5 +1,5 @@
 {
-  "name": "eom/loadsubcomponets",
+  "name": "eom/plugincakephploadsubcomponets",
   "type": "cakephp-plugin",
   "description": "CakePHP 2.x plugin for Load SubComponents.",
   "homepage": "https://github.com/EOM/PluginCakePHPLoadSubComponets",
