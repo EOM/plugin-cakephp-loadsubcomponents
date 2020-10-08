@@ -9,6 +9,9 @@
     "composer/installers": "*"
   },
   "extra": {
-    "installer-name": "PluginCakePHPLoadSubComponets"
+    "installer-name": "PluginCakePHPLoadSubComponets",
+    "installer-paths": {
+      "app/Plugin/{$name}/": ["type:cakephp-plugin"]
+    }
   }
 }
