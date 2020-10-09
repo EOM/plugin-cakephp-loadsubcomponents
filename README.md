@@ -1,7 +1,7 @@
-# Plugin CakePHP 2.x Load SubComponents
-Con este componente va a poder crear subdirectorios dentro de tu carpeta Controller/Component/.../ y que sea cargados luego sin la limitacion nativa de CakePHP 2.x respecto a este problema.
+# Plugin for CakePHP 2.x is for Load SubComponents
+Con este componente va a poder crear subdirectorios dentro de tu carpeta Controller/Component/.../ y que sean cargados luego sin la limitacion nativa de CakePHP 2.x respecto a este problema.
 
-**Instalar con composer:**
+**1. Instalar con composer:**
 
 Edita tu archivo **composer.json** con los siguientes cambios.
 
@@ -33,12 +33,16 @@ En mi caso, se tomo la siguiente estructura, si tiene otra estructura ajueste el
 | |-> autoload.php
 ```
 
+**2. Configurar bootstrap.php para cargar el plugin**
+
 Despues agregué al final del archivo o juntos a los otros plugins que tenga configurado, la siguiente linea dentro del archivo **app/Config/bootstrap.php**
 
 ```php
     // Load Plugins ...
     CakePlugin::load('EOM/LoadSubComponents', array('bootstrap' => false, 'routes' => false));
 ```
+
+**3. Configurar el component de forma global en el AppController**
 
 Como configurar el componente para todo el sistema y cargar otro componentes en una subcarpeta
 
@@ -52,7 +56,10 @@ Como configurar el componente para todo el sistema y cargar otro componentes en 
         public $components = ['EOM/LoadSubComponents.LoadSubComponents'];
     }
 ```
-Como utilizar el LoadSubComponents en __contruct o accion
+
+**4. Utilizarlos en un controller cualquier que hereda de AppController**
+
+Ejemplo de como utilizar el LoadSubComponents en __contruct o accion
 
 ```php
     /**

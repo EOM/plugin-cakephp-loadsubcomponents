@@ -1,7 +1,7 @@
 {
   "name": "eom/plugin-cakephp-loadsubcomponents",
   "type": "cakephp-plugin",
-  "description": "CakePHP 2.x plugin for Load SubComponents.",
+  "description": "Plugin CakePHP 2.x for Load SubComponents in SubFolders.",
   "homepage": "https://github.com/EOM/plugin-cakephp-loadsubcomponents",
   "license": "GPL-3.0-only",
   "authors": [
