@@ -75,8 +75,8 @@ Ejemplo de como utilizar el LoadSubComponents en __contruct o accion
             parent::__construct($request, $response);
 
             // Load path Controller/Component/SubDirectorioX/MiFunctionDemo1Component.php
-            $this->MiFunctionDemo1 = $this->LoadSubComponents('SubDirectorioX/MiFunctionDemo1');
-            $this->MiFunctionDemo3 = $this->LoadSubComponents('SubDirectorio/SubX/MiFunctionDemo3');
+            $this->MiFunctionDemo1 = $this->LoadSubComponents->load('SubDirectorioX/MiFunctionDemo1');
+            $this->MiFunctionDemo3 = $this->LoadSubComponents->load('SubDirectorio/SubX/MiFunctionDemo3');
 
             // Demo1 de como utilizarla
             $this->MiFunctionDemo1->MiAccion1('Demo');
@@ -86,7 +86,7 @@ Ejemplo de como utilizar el LoadSubComponents en __contruct o accion
         public function index(){
 
             // Load path Controller/Component/SubDirectorioX/MiFunctionDemo2Component.php
-            $this->MiFunctionDemo2 = $this->LoadSubComponents('SubDirectorioX/MiFunctionDemo2');
+            $this->MiFunctionDemo2 = $this->LoadSubComponents->load('SubDirectorioX/MiFunctionDemo2');
 
             // Demo2 de como utilizarla
             $this->MiFunctionDemo2->MiAccion1('DemoIndexBla');

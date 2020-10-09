@@ -16,7 +16,7 @@ class LoadSubComponentsComponent extends Component
      * @param string $pre_path
      * @return Component|false
      */
-    public function Load($path = '', $pre_path = APP . 'Controller/Component/')
+    public function load($path = '', $pre_path = APP . 'Controller/Component/')
     {
         // Is Empty..?
         if (empty($path) === true) {
