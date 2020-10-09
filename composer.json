@@ -1,13 +1,13 @@
 {
-  "name": "eom/plugincakephploadsubcomponets",
+  "name": "eom/plugin-cakephp-loadsubcomponents",
   "type": "cakephp-plugin",
   "description": "CakePHP 2.x plugin for Load SubComponents.",
-  "homepage": "https://github.com/EOM/PluginCakePHPLoadSubComponets",
+  "homepage": "https://github.com/EOM/plugin-cakephp-loadsubcomponents",
   "license": "GPL-3.0-only",
   "authors": [
     {
       "name": "Sergio de EOM Design Group",
-      "homepage": "https://eom.com.ar/#PluginCakePHPLoadSubComponets",
+      "homepage": "https://eom.com.ar/#PluginCakePHPLoadSubComponents",
       "role": "CEO and Developer"
     }
   ],
