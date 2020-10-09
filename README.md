@@ -7,11 +7,9 @@ Edita tu archivo **composer.json** con los siguientes cambios.
 
 ```txt
   "extra": {
-        "installer-name": {
-          "eom/plugincakephploadsubcomponets": "LoadSubComponets"
-        },
         "installer-paths": {
-            "app/Plugin/EOM/{$name}/": ["vendor:eom","type:cakephp-plugin"]
+            "app/Plugin/EOM/{$name}/": ["vendor:eom","type:cakephp-plugin"],
+            "app/Plugin/{$name}/": ["type:cakephp-plugin"]
         }
     }
  ```
@@ -26,7 +24,7 @@ En mi caso, se tomo la siguiente estructura, si tiene otra estructura ajueste el
 | |-> Plugin
 |   |-> ...
 |   |-> EOM
-|      |-> LoadSubComponents
+|      |-> LoadSubComponets
 |   |-> ...
 |-> vendors
 | |-> bin
@@ -39,5 +37,62 @@ Despues agregué al final del archivo o juntos a los otros plugins que tenga con
 
 ```php
     // Load Plugins ...
-    CakePlugin::load('EOM/PluginCakePHPLoadSubComponets', array('bootstrap' => false, 'routes' => false));
+    CakePlugin::load('EOM/LoadSubComponets', array('bootstrap' => false, 'routes' => false));
+```
+
+Como configurar el componente para todo el sistema y cargar otro componentes en una subcarpeta
+
+```php
+    /**
+     * Application Controller
+     * @property LoadSubComponentsComponent $LoadSubComponents
+     */
+    class AppController extends Controller {
+    
+        public $components = ['EOM/LoadSubComponents.LoadSubComponents'];
+    }
+```
+Como utilizar el LoadSubComponents en __contruct o accion
+
+```php
+    /**
+     * MiDemo Controller
+     * @property MiFunctionDemo1Component $MiFunctionDemo1
+     * @property MiFunctionDemo2Component $MiFunctionDemo2
+     * @property MiFunctionDemo3Component $MiFunctionDemo3
+     */
+    class MiDemoController extends AppController {
+    
+        public function __construct($request = null, $response = null)
+        {
+            parent::__construct($request, $response);
+
+            // Load path Controller/Component/SubDirectorioX/MiFunctionDemo1Component.php
+            $this->MiFunctionDemo1 = $this->LoadSubComponents('SubDirectorioX/MiFunctionDemo1');
+            $this->MiFunctionDemo3 = $this->LoadSubComponents('SubDirectorio/SubX/MiFunctionDemo3');
+
+            // Demo1 de como utilizarla
+            $this->MiFunctionDemo1->MiAccion1('Demo');
+            $this->MiFunctionDemo1->MiAccion2('Demo');
+        }
+
+        public function index(){
+
+            // Load path Controller/Component/SubDirectorioX/MiFunctionDemo2Component.php
+            $this->MiFunctionDemo2 = $this->LoadSubComponents('SubDirectorioX/MiFunctionDemo2');
+
+            // Demo2 de como utilizarla
+            $this->MiFunctionDemo2->MiAccion1('DemoIndexBla');
+
+            // Demo1 de como utilizarla
+            $this->MiFunctionDemo1->MiAccion1('DemoIndexBla');
+            $this->MiFunctionDemo1->MiAccion2('DemoIndexBlaBla..');
+
+            // Demo3 de como utilizarla
+            $this->MiFunctionDemo3->MiAccionDemoBla('DemoIndexBlaBla..');
+        }
+
+        // ...
+
+    }
 ```
