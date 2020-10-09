@@ -1,4 +1,4 @@
-# Plugin CakePHP 2.x Load SubComponents
+# Plugin for CakePHP 2.x is for Load SubComponents
 Con este componente va a poder crear subdirectorios dentro de tu carpeta Controller/Component/.../ y que sea cargados luego sin la limitacion nativa de CakePHP 2.x respecto a este problema.
 
 **Instalar con composer:**
