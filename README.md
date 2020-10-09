@@ -59,7 +59,7 @@ Como configurar el componente para todo el sistema y cargar otro componentes en 
 
 **4. Utilizarlos en un controller cualquier que hereda de AppController**
 
-Ejemplo de como utilizar el LoadSubComponents en __contruct o accion
+Ejemplo de como utilizar el LoadSubComponents en beforeFilter o una accion.
 
 ```php
     /**
@@ -70,24 +70,30 @@ Ejemplo de como utilizar el LoadSubComponents en __contruct o accion
      */
     class MiDemoController extends AppController {
     
-        public function __construct($request = null, $response = null)
+        public function beforeFilter()
         {
-            parent::__construct($request, $response);
+                parent::beforeFilter();
 
-            // Load path Controller/Component/SubDirectorioX/MiFunctionDemo1Component.php
-            $this->MiFunctionDemo1 = $this->LoadSubComponents->load('SubDirectorioX/MiFunctionDemo1');
-            $this->MiFunctionDemo3 = $this->LoadSubComponents->load('SubDirectorio/SubX/MiFunctionDemo3');
+                // Load path Controller/Component/SubDirectorios/TestDemoComponent.php
+                $this->TestDemo = $this->LoadSubComponents->Load('SubDirectorios/TestDemo');
 
-            // Demo1 de como utilizarla
-            $this->MiFunctionDemo1->MiAccion1('Demo');
-            $this->MiFunctionDemo1->MiAccion2('Demo');
+                // Load path Controller/Component/SubDirectorioX/MiFunctionDemo1Component.php
+                $this->MiFunctionDemo1 = $this->LoadSubComponents->load('SubDirectorioX/MiFunctionDemo1');
+                $this->MiFunctionDemo3 = $this->LoadSubComponents->load('SubDirectorio/SubX/MiFunctionDemo3');
+    
+                // Demo1 de como utilizarla
+                $this->MiFunctionDemo1->MiAccion1('Demo');
+                $this->MiFunctionDemo1->MiAccion2('Demo');
         }
 
         public function index(){
 
+            // TestDemo de como utilizarla
+            echo $this->TestDemo->hello('Hi EOM !!!');
+
             // Load path Controller/Component/SubDirectorioX/MiFunctionDemo2Component.php
             $this->MiFunctionDemo2 = $this->LoadSubComponents->load('SubDirectorioX/MiFunctionDemo2');
-
+            
             // Demo2 de como utilizarla
             $this->MiFunctionDemo2->MiAccion1('DemoIndexBla');
 
