@@ -84,11 +84,10 @@ Como utilizar el LoadSubComponents en __contruct o accion
             // Demo2 de como utilizarla
             $this->MiFunctionDemo2->MiAccion1('DemoIndexBla');
 
-            // Demo1 de como utilizarla
-            $this->MiFunctionDemo1->MiAccion1('DemoIndexBla');
-            $this->MiFunctionDemo1->MiAccion2('DemoIndexBlaBla..');
+            // Reutilizar Demo1 load en el __construct
+            $this->MiFunctionDemo1->MiAccion101('DemoIndexBlaBla..');
 
-            // Demo3 de como utilizarla
+            // Utilizar Demo3 load en el __construct
             $this->MiFunctionDemo3->MiAccionDemoBla('DemoIndexBlaBla..');
         }
 
