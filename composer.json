@@ -17,9 +17,7 @@
     "composer/installers": "1.*"
   },
   "extra": {
-    "installer-name": {
-      "eom/plugincakephploadsubcomponets": "LoadSubComponets"
-    },
+    "installer-name": "LoadSubComponets",
     "installer-paths": {
       "app/Plugin/EOM/{$name}/": ["vendor:eom","type:cakephp-plugin"]
     }
