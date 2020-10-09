@@ -34,6 +34,7 @@ En mi caso, se tomo la siguiente estructura, si tiene otra estructura ajueste el
 ```
 
 **2. Configurar bootstrap.php para cargar el plugin**
+
 Despues agregué al final del archivo o juntos a los otros plugins que tenga configurado, la siguiente linea dentro del archivo **app/Config/bootstrap.php**
 
 ```php
@@ -42,6 +43,7 @@ Despues agregué al final del archivo o juntos a los otros plugins que tenga con
 ```
 
 **3. Configurar el component de forma global en el AppController**
+
 Como configurar el componente para todo el sistema y cargar otro componentes en una subcarpeta
 
 ```php
@@ -56,6 +58,7 @@ Como configurar el componente para todo el sistema y cargar otro componentes en 
 ```
 
 **4. Utilizarlos en un controller cualquier que hereda de AppController**
+
 Ejemplo de como utilizar el LoadSubComponents en __contruct o accion
 
 ```php
