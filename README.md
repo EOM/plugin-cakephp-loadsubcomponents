@@ -59,7 +59,7 @@ Como configurar el componente para todo el sistema y cargar otro componentes en 
 
 **4. Utilizarlos en un controller cualquier que hereda de AppController**
 
-Ejemplo de como utilizar el LoadSubComponents en beforeFilter o una accion.
+Ejemplo de como utilizar el LoadSubComponents en beforeFilter o una acción.
 
 ```php
     /**
