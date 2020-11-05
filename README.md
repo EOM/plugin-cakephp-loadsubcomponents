@@ -4,6 +4,7 @@ Con este componente va a poder crear subdirectorios dentro de tu carpeta Control
 **1. Instalar con composer:**
 
 Edita tu archivo **composer.json** con los siguientes cambios.
+https://packagist.org/packages/eom/plugin-cakephp-loadsubcomponents
 
 ```txt
   "extra": {
